@@ -1,0 +1,20 @@
+constructionError       Calculate Construction Error of 2D Plot
+                        (tSNE/UMAP/PCA) Used by 'getHighestCorrelation'
+                        function
+dim_Red                 Dimension reduction
+do_pca_seurat           Perform PCA. Used by 'dim_Red' function.
+do_tSNE_seurat          Perform tSNE. Used by 'dim_Red' function.
+do_umap_seurat          Perform UMAP. Used by 'dim_Red' function.
+filter_cells_genes      Filter out poor quality cells and genes
+fitGMM                  Fits GMM distribution to each cluster. Used by
+                        'dim_Red' function.
+getHighestCorrelation   Finds correlation between original projection
+                        and latent dimensions
+getRelevantGenes        Finds top N relevant genes of the latent
+                        dimension
+preprocess_Data         Preprocess the raw data
+rele_Cells              Subsamples relevant cells from each cluster
+vis_2D_pred             UMAP/tSNE plot to be visualized with cell
+                        clusters as decided by Leiden clustering
+vis_2D_truth            UMAP/tSNE plot to be visualized with cell
+                        annotations
