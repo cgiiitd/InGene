@@ -2,17 +2,15 @@
 Find relevant genes from tSNE and UMAP projections of scRNA-seq  data
 
 ---
-title: "InGene Tutorial"
-output: html_document
+"InGene Tutorial (R)"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-## R Markdown
 
-The first step is to load the dataset. Here we are loading the Darmanis dataset,
-which contains neurons, astrocytes and oligodendrocytes cells after the cell types were filtered out. There are 227 cells left. The data set can be accessed inside the data folder
+## The first step is to load the dataset. Here we are loading the Darmanis dataset,
+## which contains neurons, astrocytes and oligodendrocytes cells after the cell types were filtered out. There are 227 cells left. The data set can be accessed inside the data folder
 
 ```{r}
 
@@ -21,9 +19,8 @@ samples = raw_Data[1,][-1]
 genes = raw_Data$X
 raw_Data$X = NULL
 ```
-## R Markdown
 
-Next, we read the annotations, and match it to the cell types, and drop the duplicate and NA genes as well.
+## Next, we read the annotations, and match it to the cell types, and drop the duplicate and NA genes as well.
 
 ```{r}
 
@@ -38,9 +35,7 @@ genes = genes[-index_ToDrop]
 raw_Data = raw_Data[-index_ToDrop,]
 ```
 
-## R Markdown
-
-Creating a single cell experiment object out of the raw data. The steps involved are filtering out poorly expressed cells and genes, normalizing and scaling the data.
+## Creating a single cell experiment object out of the raw data. The steps involved are filtering out poorly expressed cells and genes, normalizing and scaling the data.
 
 ```{r}
 sce_Darmanis <- preprocess_Data(raw_data = raw_Data,gene_list = genes,
@@ -48,10 +43,8 @@ sce_Darmanis <- preprocess_Data(raw_data = raw_Data,gene_list = genes,
 
 ```
 
-## R Markdown
-
-Next we create the 2D nonlinear embeddings. Here we are using UMAP. 
-Plot the 2D embeddings to visualize the cell types and clusters
+## Next we create the 2D nonlinear embeddings. Here we are using UMAP. 
+## Plot the 2D embeddings to visualize the cell types and clusters
 
 ```{r}
 
@@ -65,9 +58,7 @@ plot(Darmanis_umap_allGenes_labels) #umap with the ground truth labels
 plot(Darmanis_umap_allGenes_clusters) #umap with the predicetd clusters
 ```
 
-## R Markdown
-
-Selecting representative cells from each cluster
+## Selecting representative cells from each cluster
 
 ```{r}
 
@@ -78,9 +69,7 @@ cl_res_conf_umap_Darmanis = rele_Cells(dim_Red_List = DR_umap_Darmanis,
 
 ```
 
-## R Markdown
-
-Ranking the genes using the representative cells. 
+## Ranking the genes using the representative cells. 
 
 ```{r}
 
