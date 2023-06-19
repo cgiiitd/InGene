@@ -9,8 +9,7 @@ Find relevant genes from tSNE and UMAP projections of scRNA-seq  data
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## The first step is to load the dataset. Here we are loading the Darmanis dataset,
-## which contains neurons, astrocytes and oligodendrocytes cells after the cell types were filtered out. There are 227 cells left. The data set can be accessed inside the data folder
+## The first step is to load the dataset. Here we are loading the Darmanis dataset, which contains neurons, astrocytes and oligodendrocytes cells after the cell types were filtered out. There are 227 cells left. The data set can be accessed inside the data folder
 
 ```{r}
 
