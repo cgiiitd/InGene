@@ -26,10 +26,8 @@ raw_Data$X = NULL
 annotation = read.table("data/Darmanis/Darmanis_Annotation.csv",header = TRUE, sep = ",")
 annot = annotation[,2]
 colnames(raw_Data) = annot
-index_ToDrop = which(duplicated(genes) == TRUE)
-genes = genes[-index_ToDrop]
-raw_Data = raw_Data[-index_ToDrop,]
-index_ToDrop = which(is.na(genes) == TRUE)
+
+index_ToDrop = which(duplicated(genes) == TRUE | is.na(genes) == TRUE)
 genes = genes[-index_ToDrop]
 raw_Data = raw_Data[-index_ToDrop,]
 ```
