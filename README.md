@@ -58,7 +58,7 @@ plot(Darmanis_umap_allGenes_clusters) #umap with the predicetd clusters
 ```
 
 ## Plots
-![UMAP with all genes](/Plots/MB_allGenes_UAMP.png)
+![UMAP with all genes](Plots/MB_allGenes_UAMP.png)
 
 ## Selecting representative cells from each cluster
 
