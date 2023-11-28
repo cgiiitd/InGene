@@ -53,6 +53,9 @@ Darmanis_umap_allGenes_clusters = vis_2D_pred(DR_umap_Darmanis,x='UMAP 1',y='UMA
 
 plot(Darmanis_umap_allGenes_labels) #umap with the ground truth labels
 plot(Darmanis_umap_allGenes_clusters) #umap with the predicetd clusters
+
+![UMAP with all genes](/Plots/MB_allGenes_UAMP.pdf)
+
 ```
 
 ## Selecting representative cells from each cluster
