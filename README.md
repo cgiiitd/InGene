@@ -57,9 +57,6 @@ plot(Darmanis_umap_allGenes_clusters) #umap with the predicetd clusters
 
 ```
 
-## Plots
-![UMAP with all genes](/Plots/MB_AllGenesUMAP.png)
-
 ## Selecting representative cells from each cluster
 
 ```{r}
@@ -83,5 +80,6 @@ ori_conf_1000_umap_Darmanis = getHighestCorrelation(sce =  sce_Darmanis,reduced 
 top_Genes = getRelevantGenes(cl_res_conf_umap_Darmanis, nTop =500, ori = ori_conf_1000_umap_Darmanis, genes = rownames(sce_Darmanis)) #Selecting the top 500 ranked genes for further analysis
 ```
 
-
+## Plots.  UMAP with all genes ---> UMAP with top 1000 InGene genes 
+![UMAP with all genes](/Plots/MB_AllGenesUMAP.png)   ----> ![UMAP with all genes](/Plots/MB_InGene_UMAP.png)   
 
