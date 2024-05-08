@@ -9,6 +9,26 @@ Find relevant genes from tSNE and UMAP projections of scRNA-seq  data
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## To install the package 
+
+```{r}
+Install devtools or remotes package (if not already installed):
+
+install.packages("devtools")
+
+OR
+
+install.packages("remotes")
+
+Then use either to install the package from github:
+
+devtools::install_github("cgiiitd/InGene/R/InGene")
+
+OR
+
+remotes::install_github("cgiiitd/InGene/R/InGene")
+```
+
 ## The first step is to load the dataset. Here we are loading the Darmanis dataset, which contains neurons, astrocytes and oligodendrocytes cells after the cell types were filtered out. There are 227 cells left. The data set can be accessed inside the data folder
 
 ```{r}
