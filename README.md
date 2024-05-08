@@ -33,6 +33,8 @@ remotes::install_github("cgiiitd/InGene/R/InGene")
 
 ```{r}
 
+library(InGene)
+
 raw_Data = read.table("data/Darmanis/Darmanis_Raw_Count.csv",header=TRUE,sep = ",")
 samples = raw_Data[1,][-1]
 genes = raw_Data$X
