@@ -11,7 +11,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## To install the package 
 
+
 ```{r}
+Method 1
+
+Downloading and installing tar.gz file.
+
+After downloading InGene_1.0.tar.gz from Package(tar.gz)
+
+### install.packages("InGene_1.0.tar.gz", repos = NULL, type = "source")
+
+```
+
+
+
+```{r}
+Method 2 (using git)
+
 Install devtools or remotes package (if not already installed):
 
 install.packages("devtools")
