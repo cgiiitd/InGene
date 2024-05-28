@@ -45,7 +45,9 @@ OR
 remotes::install_github("cgiiitd/InGene/R/InGene")
 ```
 
-## The first step is to load the dataset. Here we are loading the Darmanis dataset, which contains neurons, astrocytes and oligodendrocytes cells after the cell types were filtered out. There are 227 cells left. The data set can be accessed inside the data folder
+## Applying InGene
+
+### The first step is to load the dataset. Here we are loading the Darmanis dataset, which contains neurons, astrocytes and oligodendrocytes cells after the cell types were filtered out. There are 227 cells left. The data set can be accessed inside the data folder
 
 ```{r}
 
@@ -57,7 +59,7 @@ genes = raw_Data$X
 raw_Data$X = NULL
 ```
 
-## Next, we read the annotations, and match it to the cell types, and drop the duplicate and NA genes as well.
+### Next, we read the annotations, and match it to the cell types, and drop the duplicate and NA genes as well.
 
 ```{r}
 
@@ -70,7 +72,7 @@ genes = genes[-index_ToDrop]
 raw_Data = raw_Data[-index_ToDrop,]
 ```
 
-## Creating a single cell experiment object out of the raw data. The steps involved are filtering out poorly expressed cells and genes, normalizing and scaling the data.
+### Creating a single cell experiment object out of the raw data. The steps involved are filtering out poorly expressed cells and genes, normalizing and scaling the data.
 
 ```{r}
 sce_Darmanis <- preprocess_Data(raw_data = raw_Data,gene_list = genes,
@@ -78,8 +80,8 @@ sce_Darmanis <- preprocess_Data(raw_data = raw_Data,gene_list = genes,
 
 ```
 
-## Next we create the 2D nonlinear embeddings. Here we are using UMAP. 
-## Plot the 2D embeddings to visualize the cell types and clusters
+### Next we create the 2D nonlinear embeddings. Here we are using UMAP. 
+### Plot the 2D embeddings to visualize the cell types and clusters
 
 ```{r}
 
@@ -95,7 +97,7 @@ plot(Darmanis_umap_allGenes_clusters) #umap with the predicetd clusters
 
 ```
 
-## Selecting representative cells from each cluster
+### Selecting representative cells from each cluster
 
 ```{r}
 
@@ -106,7 +108,7 @@ cl_res_conf_umap_Darmanis = rele_Cells(dim_Red_List = DR_umap_Darmanis,
 
 ```
 
-## Ranking the genes using the representative cells. 
+### Ranking the genes using the representative cells. 
 
 ```{r}
 
@@ -118,6 +120,6 @@ ori_conf_1000_umap_Darmanis = getHighestCorrelation(sce =  sce_Darmanis,reduced 
 top_Genes = getRelevantGenes(cl_res_conf_umap_Darmanis, nTop =500, ori = ori_conf_1000_umap_Darmanis, genes = rownames(sce_Darmanis)) #Selecting the top 500 ranked genes for further analysis
 ```
 
-## Plots.  UMAP with all genes (A) ---> UMAP with top 1000 InGene genes (B)
+### Plots.  UMAP with all genes (A) ---> UMAP with top 1000 InGene genes (B)
 (A) ![UMAP with all genes](/Plots/MB_AllGenesUMAP.png)   (B)  ![UMAP with all genes](/Plots/MB_InGene_UMAP.png)   
 
