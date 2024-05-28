@@ -19,7 +19,7 @@ Downloading and installing tar.gz file.
 
 After downloading InGene_1.0.tar.gz from Package(tar.gz)
 
-### install.packages("InGene_1.0.tar.gz", repos = NULL, type = "source")
+install.packages("InGene_1.0.tar.gz", repos = NULL, type = "source")
 
 ```
 
