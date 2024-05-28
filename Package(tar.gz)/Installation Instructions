@@ -1,5 +1,7 @@
 ## Installation Instructions
 
+After downlaoding InGene_1.0.tar.gz 
+
 ```{r}
 install.packages("InGene_1.0.tar.gz", repos = NULL, type = "source")
 ```
